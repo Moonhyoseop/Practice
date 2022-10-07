@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 : colgroup</title>
+    <style>
+        table, th, td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+        th, td{
+             padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>
+            <p>colgroup은 반드시 caption다음에 코딩해야 함</p>
+        </caption>
+        <colgroup>
+        <col style="width: 200px;">
+        <col style="width: 300px;">
+        <col style="width: 150px;">
+        <col style="width: 300px;">
+        </colgroup>
+        <tr>
+            <th>이름</th>
+            <td>2222</td>
+            <th>연락처</th>
+            <td>4444</td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td colspan="3">주소내용</td>
+        </tr>
+        <tr>
+            <th>자기소개</th>
+            <td colspan="3">자기소개내용</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
