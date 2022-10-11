@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-weight: normal;
+            font-size: 16px;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            vertical-align: top;
+        }
+        video{
+            vertical-align: text-top;
+        }
+        #wrap{
+            width: 1280px;
+            margin: 0 auto;
+            /* background-color: red; */
+            text-align: center;
+        }
+        video{
+            width: 100%;
+        }
+        figcaption{
+            font-size: 24px;
+            font-weight : bold;
+            color: red;
+            background-color: silver;
+        }
+     
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <figure>
+            <figcaption><p>First MP4</p></figcaption>
+            <video autoplay muted loop>
+                <source src="./media/stinger.mp4" type="video/mp4">
+                이 영상을 보고 싶으면 최신 브라우저를 설치하세요.
+            </video>
+        </figure>
+        <figure>
+            <figcaption>Second MP4</figcaption>
+            <video autoplay muted loop>
+                <source src="./media/cars.mp4" type="video/mp4">
+                이 영상을 보고 싶으면 최신 브라우저를 설치하세요.
+            </video>
+        </figure>
+    </div>
+</body>
+</html>

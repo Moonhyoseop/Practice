@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조시멘틱태그 실습</title>
+
+    <style> 
+    /* Reset CSS = 캡쳐/넘버링 
+    margin : 0; 
+    padding: 0;
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+    vertical-align: top;*/
+
+    *{
+        margin:0;
+        padding:0;
+    }  
+    h1,h2,h3,h4,h5,h6{
+        font-weight: normal;
+        font-size:16px;
+       
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    li{
+        life-style:none;
+    }
+    img{
+        vertical-align: top;
+    }
+    body{
+        background-color: black;
+    }
+    #wrap{
+        width: 960px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: red;
+    }
+    header{
+        background-color: #2682A6;
+    }
+    nav{
+        background-color: #07D9C4;
+    }
+    section{
+        background-color: #F2C641;
+    }
+    article{
+        background-color: orange;
+    }
+    div{
+        background-color: #D93425;
+    }
+    footer{
+        background-color:dodgerblue;
+    }
+    </style>
+</head>    
+<body>    
+    <aside>
+       ssssss
+       </aside>
+    <div id="wrap">
+    <header>
+        <h1>LOGO</h1>
+        <h2>메인메뉴</h2>   
+            <nav>
+                <ul>
+                    <li>
+                    <a href="#">1depth 메뉴1</a>
+                 <ul>
+                    <li><a href="#">2depth 서브메뉴1</a>
+                    <li><a href="#">2depth 서브메뉴2</a>
+                </li>
+                </ul>
+                <li>
+                    <a href="#">1depth 메뉴2</a>
+                <li>
+                    <a href="#">1depth 메뉴3</a>
+                <li>
+                    <a href="#">1depth 메뉴4</a>
+                </li>
+            </ul>
+        </nav>
+    
+</header>
+<main role="main">
+    <section> 
+        <section>
+            <h1>왼쪽 콘텐츠</h1>
+            <p>왼쪽내용</p>   
+        </section>
+        <article>
+            <h1>가운데 콘텐츠</h1>
+            <p>가운데 내용</p>
+        </article>
+        <div>
+            <h1>오른쪽 콘텐츠</h1>
+            <p>오른쪽내용</p>
+        </div>
+</main>
+    <footer>
+        <p>사이트정보</p>
+    </footer>
+</div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 시멘틱 실습</title>
+    <style>
+        /* Reset CSS = 캡쳐/넘버링 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+            font-size: 16px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        li {
+            list-style: none;
+        }
+        img {
+            vertical-align: top;
+        }
+        body {
+            background-color: #000;
+        }
+        #wrap {
+            width: 960px;
+            margin: 0 auto;
+            /* text-align: center; */
+            /* background-color: red; */
+        }
+        /* 1. 헤더영역 */
+        header {
+            background-color: #2682A6;
+        }
+        nav {
+            background-color: #07D9C4;
+        }
+        section {
+            background-color: #F2C641;
+        }
+        article {
+            background-color: #D9753B;
+        }
+        div {
+            background-color: #D93425;
+        }
+        footer {
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 1. 헤더영역 시작 -->
+        <header>
+            <h1>LOGO</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">1 Depth MENU1</a>
+                        <ul>
+                            <li><a href="#">2 Depth SUBMENU1</a></li>
+                            <li><a href="#">2 Depth SUBMENU2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">1 Depth MENU2</a></li>
+                    <li><a href="#">1 Depth MENU3</a></li>
+                    <li><a href="#">1 Depth MENU4</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- 1. 헤더영역 끝 -->
+        <!-- 2. 콘텐츠영역 시작 -->
+        <main role="main">
+            <section>
+                <section>
+                    <h2>왼쪽 콘텐츠</h2>
+                    <p>왼쪽 내용</p>
+                </section>
+                <article>
+                    <h2>가운데 콘텐츠</h2>
+                    <p>가운데 내용</p>
+                </article>
+                <div>
+                    <h2>오른쪽 콘텐츠</h2>
+                    <p>오른쪽 내용</p>
+                </div>
+            </section>
+        </main>
+        <!-- 2. 콘텐츠영역 끝 -->
+        <!-- 3. 푸터영역 시작 -->
+        <footer>
+            <p>사이트정보</p>
+        </footer>
+        <!-- 3. 푸터영역 끝 -->
+    </div>
+</body>
+</html> -->
