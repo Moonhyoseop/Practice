@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산술연산자</title>
+    <script>
+        // 데이터 형 : 문자형(String)
+        var str = "자바스크립트";
+        var str2 = "10";
+        // 데이터 형변환 : 문자 -> 숫자
+        str2 = Number(str2);
+        
+        // 데이터 형 : 숫자형(Number)
+        var num1 = 10;
+        var num2 = 5;
+        var num3 = 3;
+        
+        // 데이터 형 : 논리형(Boolean)
+        var bool = true;
+        var boolTwo = false;
+
+        // 도큐먼트 출력
+        document.write("이 변수의 데이터 형(Data Type)은? " +typeof(bool) + "<br>");
+
+        // 데이터 형 : undefined
+        var undefined;
+
+        // 데이터 형 : null
+        var clear = null;
+        console.log(typeof(clear)); //object
+        
+        var result = null;
+        //산술연산자
+        result = num1 + num2;
+        document.write("두 수의 합은 ? " + result + "<br>");
+        result = num1 - num2;
+        document.write("두 수의 차는 ? " + result + "<br>");
+        result = num1 * num2;
+        document.write("두 수의 곱은 ? " + result + "<br>");
+        result = num1 / num2;
+        document.write("두 수의 나눈값은 ? " + result + "<br><br>");
+
+        // 나머지값 구하기
+        result = num1%num3;
+        document.write("두 수의 나머지값은 ? " + result + "<br>");
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
