@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./계산기.css">
+    <title>계산기</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+
+
+        <div id="">
+            <input type="text" readonly id="result"> 결과값
+        </div>
+
+        <div class="result">
+            <input type="text" id="number_operation">
+        </div>
+
+
+    </div>
+        <div>
+            <input class='number' type="button" value="1">
+            <input class='number' type="button" value="2">
+            <input class='number'type="button" value="3">
+            <input class='operation' type="button" value="+"></input>
+        </div>
+
+        <div>
+            <input class='number'type="button" value="4">
+            <input class='number' type="button" value="5">
+            <input class='number'type="button" value="6">
+            <input class='operation' type="button" value="-"></input>
+        </div>
+        
+        <div>
+            <input class='number'type="button" value="7">
+            <input class='number'type="button" value="8">
+            <input class='number' type="button" value="9">
+            <input class='operation' type="button" value="*"></input>
+        </div>
+        
+        <div>
+            <input type="button" value=" "></input>
+            <input class='number' type="button" value="0"></input>
+            <input class='operation' type="button" value="."></input>
+            <input id='operation' type="button" value="="></input>
+        </div>
+    </div>
+
+
+    <input type="hidden" id="one" value=0>
+    <input type="hidden" id="two" value=0>
+
+    <script>
+      
+
+
+      $(document).on("click", ".number", function () {
+
+
+        let value = $("#number_operation").val()
+
+
+        if($("#one").val() == 0){
+            $("#one").val($(this).val());
+        }
+
+
+        if($("#one").val() != 0){
+            $("#two").val($(this).val());
+        }
+
+        $("#number_operation").val(value + $(this).val())
+
+        console.log('번호 클릭' , $(this).val())
+      });
+
+
+      $(document).on("click", ".operation", function () {
+
+
+        $("#number_operation").val();
+        let value = $("#number_operation").val()
+
+        $("#number_operation").val(value + $(this).val())
+
+        console.log('연산자 클릭', $(this).val())
+
+    });
+
+
+
+      $(document).on("click", "#operation", function () {
+            
+
+        let value = $("#number_operation").val();
+
+        console.log(value.indexOf('+'))
+
+            if(value.indexOf('+') != -1){
+                    let result = Number($("#one").val()) + Number($("#two").val());
+                    $("#result").val(result)
+
+            }
+
+            if(value.indexOf('-') != -1){
+                let result = Number($("#one").val()) - Number($("#two").val());
+                $("#result").val(result)
+
+            }
+            if(value.indexOf('*') != -1){
+                let result = Number($("#one").val()) * Number($("#two").val());
+                $("#result").val(result)
+
+            }
+
+
+            if(value.indexOf('/') != -1){
+                let result = Number($("#one").val()) / Number($("#two").val());
+                $("#result").val(result)
+
+            }
+
+
+
+
+        }); 
+
+
+    </script>
+</body>
+</html>
