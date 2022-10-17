@@ -1,0 +1,31 @@
+.ex-layout{
+    height: 310px;
+}
+.menu{
+    width: 300px;
+    height: 40px;
+    border: 2px solid #000;
+    background-color: skyblue;
+}
+.main .left-menu{
+    float: left;
+    width: 50px;
+    height: 254px;
+    border: 2px solid red;
+    background-color: yellow;
+}
+.main .content{
+    float: left;
+    width: 250px;
+    height: 250px;
+}
+.main .article{
+    height: 200px;
+    border: 2px solid purple;
+    background-color: hotpink;
+}
+.main .comment{
+    height: 50px;
+    border:2px solid blue;
+    background-color: red;
+}
