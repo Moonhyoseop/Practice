@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="버튼">버튼</button>
+    <button id="버튼2">버튼이에요</button>
+    <script>
+      //오브젝트 안에 있는 함수 -> 메소드
+
+      let user = {
+        name: "park",
+        age: 18,
+        showMe: function () {
+          console.log(this);
+        },
+      };
+
+      user.showMe();
+
+      let obj = {
+        data: {
+          hello() {
+            console.log(this);
+          },
+        },
+      };
+
+      obj.data.hello();
+
+      document.getElementById("버튼").addEventListener("click", function (e) {
+        var 어레이 = [1, 2, 3, 4];
+        어레이.forEach(function (a) {
+          console.log(this);
+        });
+      });
+
+      var 오브젝트 = {
+        name: ["김", "문", "이", "박"],
+        함수: function () {
+          console.log(this);
+          오브젝트.name.forEach(function () {
+            console.log(this);
+          });
+        },
+      };
+
+      오브젝트.함수();
+
+      let 함수2 = (a) => a + 10;
+
+      console.log(함수2(1));
+
+      [1, 2, 3, 4].forEach((a) => {
+        console.log(a);
+      });
+
+      let 오브젝트1 = {
+        함수: function () {
+          console.log(this);
+        },
+      };
+
+      오브젝트1.함수();
+
+      let 오브젝트2 = {
+        함수: () => {
+          console.log(this);
+        },
+      };
+
+      오브젝트2.함수();
+
+      //간단 연습문제
+
+      var 사람 = {
+        name: "손흥민",
+        sayHi: function () {
+          console.log("안녕 나는 " + this.name);
+        },
+      };
+
+      사람.sayHi();
+
+      var 자료 = {
+        data: [1, 2, 3, 4, 5],
+      };
+
+      자료.전부더하기 = function () {
+        var 합 = 0;
+        this.data.forEach(function (a) {
+          합 = 합 + a;
+        });
+        console.log(합);
+      };
+      자료.전부더하기();
+
+      document.getElementById("버튼2").addEventListener("click", function () {
+        setTimeout(() => {
+          console.log(this.innerHTML);
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
