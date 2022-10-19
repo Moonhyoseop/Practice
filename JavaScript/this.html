@@ -100,10 +100,23 @@
       자료.전부더하기();
 
       document.getElementById("버튼2").addEventListener("click", function () {
-        setTimeout(() => {
-          console.log(this.innerHTML);
-        }, 2000);
+        setTimeout(function () {
+          console.log("ㅎㅇ");
+        }, 1000);
       });
+
+      let data = {
+        data2: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      };
+
+      data.plus = function () {
+        var allPlus = 0;
+        this.data2.forEach(function (a) {
+          allPlus = allPlus + a;
+        });
+        console.log(allPlus);
+      };
+      data.plus();
     </script>
   </body>
 </html>

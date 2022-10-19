@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="display: none">모달창0</div>
+    <div style="display: none">모달창1</div>
+    <div style="display: none">모달창2</div>
+
+    <button>버튼0</button>
+    <button>버튼1</button>
+    <button>버튼2</button>
+
+    <script>
+      var 버튼들 = document.querySelectorAll("button");
+      var 모달창들 = document.querySelectorAll("div");
+
+      for (let i = 0; i < 3; i++) {
+        버튼들[i].addEventListener("click", function () {
+          모달창들[i].style.display = "block";
+        });
+      }
+
+      // var function 내에서만 존재 o
+      function 함수() {
+        var 이름 = "moon";
+        console.log(이름);
+      }
+
+      // let, const {} 중괄호 내에서만 존재o
+      if (1 == 1) {
+        let 나이 = 18;
+        console.log(나이);
+      }
+
+      //전역 변수
+
+      var 나이 = 20;
+
+      function 함수2() {
+        console.log(나이);
+      }
+
+      함수2();
+
+      함수4();
+      function 함수4() {
+        console.log(안녕);
+        var 안녕 = "Hello";
+      }
+
+      if (true) {
+        let a = 1;
+        var b = 2;
+        if (true) {
+          let b = 3;
+        }
+        console.log(b);
+      }
+
+      var a = 100;
+      var 함수3 = function () {
+        a = 200;
+      };
+      함수3();
+      console.log(a);
+
+      let c = 1;
+      var d = 2;
+      window.c = 3;
+      window.d = 4;
+      console.log(c + d);
+
+      for (let i = 1; i < 6; i++) {
+        setTimeout(function () {
+          console.log(i);
+        }, i * 1000);
+      }
+    </script>
+  </body>
+</html>
