@@ -117,6 +117,42 @@
         console.log(allPlus);
       };
       data.plus();
+
+      const mike = {
+        name: "Mike",
+      };
+
+      const tom = {
+        name: "Tom",
+      };
+
+      function showThisName() {
+        console.log(this.name);
+      }
+
+      showThisName.call(mike);
+      showThisName.call(tom);
+
+      function update(birthYear, occupation) {
+        this.birthYear = birthYear;
+        this.occupation = occupation;
+      }
+
+      update.call(mike, 1994, "singer");
+      console.log(mike);
+
+      update.apply(tom, [2002, "teacher"]);
+      console.log(tom);
+
+      const nums = [3, 10, 1, 6, 4];
+      //const minNum = Math.min(...nums);
+      //const maxNum = Math.max(...nums);
+
+      const minNum = Math.min.apply({}, nums);
+      const maxNum = Math.max.call({}, ...nums);
+
+      console.log(minNum);
+      console.log(maxNum);
     </script>
   </body>
 </html>
