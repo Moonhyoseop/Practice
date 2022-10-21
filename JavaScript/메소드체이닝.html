@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+
+    <script>
+      let boxEls = document.querySelectorAll(".box");
+
+      boxEls.forEach(function (boxEl, index) {
+        boxEl.classList.add(`order-${index + 1}`);
+        console.log(index, boxEl);
+      });
+
+      const boxEl = document.querySelector(".box");
+      console.log(boxEl);
+
+      boxEl.textContent = "hihiha";
+      console.log(boxEl.textContent);
+
+      const a = "Hello~";
+      const b = a.split("").reverse().join("");
+
+      console.log(a);
+      console.log(b);
+
+      const park = "hyunki";
+
+      const park2 = park.split("").join("");
+      console.log(park2);
+    </script>
+  </body>
+</html>
