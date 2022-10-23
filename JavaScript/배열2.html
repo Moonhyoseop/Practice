@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">박스!!</div>
+
+    <script>
+      const number = [1, 2, 3, 4];
+      const fruits = ["apple", "banana", "cherry"];
+
+      const a = number.forEach((num, index) => {
+        console.log(`${num}-${index}`);
+      });
+      console.log(a);
+
+      const b = number.map(function (num, index) {
+        return {
+          id: index,
+          name: num,
+        };
+      });
+      console.log(b);
+
+      const number2 = [1, 2, 3, 4];
+      const fruits2 = ["apple", "banana", "cherry"];
+
+      const a2 = number2.map((number) => {
+        return number < 3;
+      });
+      console.log(a2);
+
+      const b2 = number2.filter((number) => {
+        return number < 3;
+      });
+      console.log(b2);
+
+      //.find() .findIndex(),includes()
+
+      const numbers3 = [1, 2, 3, 4];
+      const fruits3 = ["apple", "Banana", "cherry"];
+
+      const a3 = fruits3.find((fruit) => {
+        return /^B/.test(fruit);
+      });
+      console.log(a3);
+
+      const numbers4 = [1, 2, 3, 4];
+      const fruits4 = ["apple", "Banana", "cherry"];
+
+      const b3 = fruits4.findIndex((fruit) => {
+        return /^B/.test(fruit);
+      });
+      console.log(b3);
+
+      // .push() .unshift() .reverse .splice
+
+      const numbers5 = [1, 2, 3, 4];
+      const fruits5 = ["apple", "banana", "cherry"];
+
+      fruits5.splice(2, 0, "Orange");
+      console.log(fruits5);
+    </script>
+  </body>
+</html>
