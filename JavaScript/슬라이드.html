@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>좌우 슬라이드</h1>
+      <div class="album">
+        <div class="images">
+          <img src="./img/image/fox.jpg" alt="" />
+          <img src="./img/image/nature.jpg" alt="" />
+          <img src="./img/image/space.jpg" alt="" />
+          <img src="./img/image/flower.jpg" alt="" />
+        </div>
+      </div>
+
+      <button class="prev">&lang;</button>
+      <button class="next">&rang;</button>
+    </div>
+    <script>
+      let curPos = 0; // 현재 보여주는 이미지 인덱스 번호
+      let positionValue = 0; // 이미지 태그의 위치 값 지정할 변수
+      const IMAGE_WIDTH = 400;
+
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+      const images = document.querySelector(".images");
+
+      function next() {
+        if (curPos < 3) {
+          prevBtn.removeAttribute("disabled");
+          positionValue -= IMAGE_WIDTH;
+          images.style.transform = `translateX(${positionValue}px)`;
+          curPos += 1;
+        }
+        if (curPos === 3) {
+          nextBtn.setAttribute("disabled", "true");
+        }
+      }
+
+      function prev() {
+        if (curPos > 0) {
+          nextBtn.removeAttribute("disabled");
+          positionValue += IMAGE_WIDTH;
+          images.style.transform = `translateX(${positionValue}px)`;
+          curPos -= 1;
+        }
+        if (curPos === 0) {
+          prevBtn.setAttribute("disabled", "true");
+        }
+      }
+
+      //초기화
+      function init() {
+        prevBtn.setAttribute("disabled", "true");
+        prevBtn.addEventListener("click", prev);
+        nextBtn.addEventListener("click", next);
+      }
+
+      init();
+    </script>
+  </body>
+</html>
