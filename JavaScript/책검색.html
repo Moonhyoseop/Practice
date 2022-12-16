@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>dd</h1>
+      <p></p>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.2.js"
+      integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $.ajax({
+        method: "GET", //전송방식
+        url: "https://dapi.kakao.com/v3/search/book?target=title", // 전송주소
+        data: { query: "미움받을 용기" },
+        headers: { Authorization: "KakaoAK 3bff13e426e07974b11002030bb5efb2" }, // 보낼데이터
+      }).done(function (msg) {
+        // 응답에 대한 처리 방식
+        const Hello = msg.documents[0].title;
+        console.log(msg.documents[0].thumbnail);
+        $("p").append("<strong>" + Hello + "</strong>");
+        $("p").append("<img src='" + msg.documents[0].thumbnail + "' /");
+        console.log(msg);
+      });
+    </script>
+  </body>
+</html>
